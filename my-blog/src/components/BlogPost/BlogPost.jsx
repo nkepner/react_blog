@@ -36,13 +36,13 @@ function BlogPost({ id, title, content, author, date }) {
         {content.length > 200 && (
           <button
             onClick={toggleContent}
-            className={BlogPost.expand}
+            className={styles.expand}
           >
             {isExpanded ? 'Read less' : 'Read more'}
           </button>
         )}
       </div>
-      <div className={BlogPost.actions}>
+      <div className={styles.actions}>
       <LikeButton initialLikes={0} />
       <CommentSection postId={id} />
     </div>
@@ -71,6 +71,7 @@ function BlogPost({ id, title, content, author, date }) {
 // }
 
 BlogPost.propTypes = {
+  id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
@@ -79,3 +80,4 @@ BlogPost.propTypes = {
 };
 
 export default BlogPost;
+

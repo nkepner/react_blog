@@ -8,6 +8,7 @@ function BlogList({ posts }) {
       {posts.map(post => (
         <BlogPost
           key={post.id}
+          id={post.id}
           title={post.title}
           content={post.content}
           author={post.author}
