@@ -116,4 +116,4 @@ I kept the initial basic styling given in the assignment for now.
 Added Blog Posts with titles content date and readTime displayed
 
 ## Screenshots
-![ScreenShot Part 1](screenshots/myblogpart1scrnsht.png)
+![ScreenShot Part 1](./screenshots/myblogpart1scrnsht.png)
