@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './PostEditor.css';
+import TagInput from '../TagInput/TagInput';
 
 function PostEditor() {
   const [formData, setFormData] = useState({
