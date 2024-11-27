@@ -12,6 +12,7 @@ function CommentSection({ postId }) {
     if (!newComment.trim()) return;
 
     setComments(prevComments => [...prevComments, {
+      postId: postId,
       id: Date.now(),
       text: newComment,
       timestamp: new Date().toISOString()

@@ -2,7 +2,7 @@ export const posts = [
     {
         id: 1,
         title: "Getting Started with React",
-        content: "React is a powerful library for building user interfaces...",
+        content: "React is a powerful library for building user interfaces... React is a powerful library for building user interfaces...React is a powerful library for building user interfaces...React is a powerful library for building user interfaces...React is a powerful library for building user interfaces...React is a powerful library for building user interfaces...React is a powerful library for building user interfaces...",
         author: "Jane Doe",
         date: "2024-03-15",
         readTime: 5
