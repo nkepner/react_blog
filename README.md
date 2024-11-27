@@ -116,4 +116,4 @@ I kept the initial basic styling given in the assignment for now.
 Added Blog Posts with titles content date and readTime displayed
 
 ## Screenshots
-![ScreenShot Part 1](myblogpart1scrnsht.png)
+![ScreenShot Part 1](https://github.com/nkepner/react_blog/blob/steps0-2/myblogpart1scrnsht.png)
