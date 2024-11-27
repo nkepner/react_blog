@@ -18,11 +18,13 @@ const BlogFilters = memo(function BlogFilters({
           value={filters.category}
           onChange={(e) => onFilterChange('category', e.target.value)}
         >
-          {categories.map(category => (
+          {categories.map((category) => { category &&
+            (
             <option key={category} value={category}>
               {category.charAt(0).toUpperCase() + category.slice(1)}
             </option>
-          ))}
+          )}
+          )}
         </select>
       </div>
 
