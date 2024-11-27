@@ -101,3 +101,19 @@ my-blog/
 │   └── index.css    # Global styles
 ├── package.json     # Project configuration
 └── vite.config.js   # Vite configuration
+
+### README Updates Part 1
+
+## Components Structure
+- BlogPost: Individual blog post display
+- BlogList: Container for multiple posts
+- Header: Navigation and site title
+
+## Styling Approach
+I kept the initial basic styling given in the assignment for now.
+
+## New Features
+Added Blog Posts with titles content date and readTime displayed
+
+## Screenshots
+![ScreenShot Part 1](screenshots/myblogpart1scrnsht.png)
