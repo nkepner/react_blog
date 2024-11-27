@@ -1,3 +1,5 @@
+import React from "react";
+
 export const posts = [
     {
         id: 1,
@@ -7,6 +9,7 @@ export const posts = [
         date: "2024-03-15",
         readTime: 5,
         category: "Technology",
+        tags: ["react", "beginner"],
     },
     {
         id: 2,
@@ -16,6 +19,7 @@ export const posts = [
         date: "2024-03-16",
         readTime: 3,
         category: "Travel",
+        tags: ["react", "props", "intermediate"],
     },
     {
         id: 3,
@@ -25,6 +29,7 @@ export const posts = [
         date: "2024-03-17",
         readTime: 4,
         category: "General",
+        tags: ["filler", "advanced"]
     },
     {
         id: 4,
@@ -34,6 +39,7 @@ export const posts = [
         date: "2024-03-18",
         readTime: 7,
         category: "Lifestyle",
+        tags: ["daily", "beginner"]
     },
     // Add 1-2 more sample posts
 ];
