@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './PostEditor.css';
 import TagInput from '../TagInput/TagInput';
+import RichTextEditor from '../RichTextEditor/RichTectEditor';
 
 function PostEditor() {
   const [formData, setFormData] = useState({
@@ -80,6 +81,12 @@ function PostEditor() {
       console.log('Form submitted:', formData);
     }
   };
+const richTextChange = (value) =>  {
+    setFormData(prev => ({
+        ...prev,
+        content: value
+    }));
+};
 
   return (
     <form onSubmit={handleSubmit} className="post-editor">
@@ -99,16 +106,7 @@ function PostEditor() {
 
       <div className="form-group">
         <label htmlFor="content">Content *</label>
-        <textarea
-          id="content"
-          name="content"
-          value={formData.content}
-          onChange={handleChange}
-          onBlur={handleBlur}
-          rows="10"
-          className={errors.content ? 'error' : ''}
-        />
-        {errors.content && <span className="error-message">{errors.content}</span>}
+       <RichTextEditor value={formData.content} onChange={richTextChange} error={errors.content} />
       </div>
 
       <TagInput
