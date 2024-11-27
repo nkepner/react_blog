@@ -117,3 +117,6 @@ Added Blog Posts with titles content date and readTime displayed
 
 ## Screenshots
 ![ScreenShot Part 1](https://github.com/nkepner/react_blog/blob/steps0-2/myblogpart1scrnsht.png)
+<p>
+<img src="https://github.com/nkepner/react_blog/blob/steps0-2/myblogpart1scrnsht.png"/>
+</p>
