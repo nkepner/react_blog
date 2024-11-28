@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
-import Navigation from '../Navigation';
-import Sidebar from '../Sidebar';
-import Footer from '../Footer';
+import Navigation from '../Navigation/Navigation';
+import Sidebar from '../Sidebar/Sidebar';
+//import Footer from '../Footer';
 import './Layout.css';
 
 function Layout() {
@@ -17,7 +17,6 @@ function Layout() {
         <Sidebar className="layout__sidebar" />
       </div>
       
-      <Footer />
     </div>
   );
 }

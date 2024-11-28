@@ -1,12 +1,12 @@
 import { createBrowserRouter } from 'react-router-dom';
-import Layout from '../components/Layout';
+import Layout from '../components/Layout/Layout';
 import Home from '../pages/Home';
 import BlogList from '../pages/BlogList';
 import PostDetail from '../pages/PostDetail';
 import NewPost from '../pages/NewPost';
 import EditPost from '../pages/EditPost';
 import Profile from '../pages/Profile';
-import NotFound from '../pages/NotFound';
+import NotFound from '../pages/NotFound/NotFound';
 
 export const router = createBrowserRouter([
   {
