@@ -1,5 +1,14 @@
-const NewPost =() => {
-    return <h2>New Post Page</h2>
+import PostEditor from '../components/PostEditor/PostEditor';
+
+const NewPost = () => {
+    return (
+        <div>
+            <h2>Make a Blog Post of your own?</h2>
+            <div>
+                <PostEditor />
+            </div>
+        </div>
+    )
 }
 
 export default NewPost

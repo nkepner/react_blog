@@ -1,5 +1,16 @@
+import { useParams } from 'react-router-dom';
+import { posts } from '../data/posts';
+import BlogPost from '../components/BlogPost/BlogPost';
+
+
 const PostDetail =() => {
-    return <h2>Post Detail Page</h2>
+    const { id } = useParams();
+
+    const post = posts.find(post => post.id === parseInt(id));
+
+    return (
+        <BlogPost key={post.id} {...post} />
+    )
 }
 
 export default PostDetail
