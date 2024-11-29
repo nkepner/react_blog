@@ -76,27 +76,6 @@ function BlogList({ posts }) {
   );
 }
 
-// export default BlogList;
-
-
-// function BlogList({ posts }) {
-//   return (
-//     <div className="blog-list">
-//       {posts.map(post => (
-//         <BlogPost
-//           key={post.id}
-//           id={post.id}
-//           title={post.title}
-//           content={post.content}
-//           author={post.author}
-//           date={post.date}
-//           readTime={post.readTime}
-//         />
-//       ))}
-//     </div>
-//   );
-// }
-
 BlogList.propTypes = {
   posts: PropTypes.arrayOf(
     PropTypes.shape({

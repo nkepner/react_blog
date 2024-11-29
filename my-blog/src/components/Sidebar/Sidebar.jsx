@@ -8,14 +8,13 @@ function Sidebar() {
     'Technology',
     'Lifestyle',
     'Travel',
-    'Food',
-    'Programming'
+    'General',
   ];
 
   const recentPosts = [
     { id: 1, title: 'Getting Started with React' },
-    { id: 2, title: 'Understanding React Router' },
-    { id: 3, title: 'Mastering CSS Grid' }
+    { id: 2, title: 'Understanding Props' },
+    { id: 3, title: 'Lorem Ipsum' }
   ];
 
   return (

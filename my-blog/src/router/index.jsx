@@ -7,6 +7,7 @@ import NewPost from '../pages/NewPost';
 import EditPost from '../pages/EditPost';
 import Profile from '../pages/Profile';
 import NotFound from '../pages/NotFound/NotFound';
+import { posts } from '../data/posts';
 
 export const router = createBrowserRouter([
   {
@@ -23,7 +24,7 @@ export const router = createBrowserRouter([
         children: [
           {
             index: true,
-            element: <BlogList />
+            element: <BlogList posts={posts} />
           },
           {
             path: ':id',
