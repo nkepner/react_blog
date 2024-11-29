@@ -22,7 +22,7 @@ function Sidebar() {
           {categories.map(category => (
             <li key={category} className="sidebar__item">
               <button 
-                onClick={() => navigate(`/posts?category=${category.toLowerCase()}`)}
+                onClick={() => navigate(`/posts/${category}/category`)}
                 className="sidebar__link"
               >
                 {category}
@@ -38,7 +38,7 @@ function Sidebar() {
           {recentPosts.map(post => (
             <li key={post.id} className="sidebar__item">
               <button
-                onClick={() => navigate(`/posts/${post.id}`)}
+                onClick={() => navigate(`/posts/${post.id}/detail`)}
                 className="sidebar__link"
               >
                 {post.title}

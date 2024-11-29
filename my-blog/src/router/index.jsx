@@ -8,6 +8,7 @@ import EditPost from '../pages/EditPost';
 import Profile from '../pages/Profile';
 import NotFound from '../pages/NotFound/NotFound';
 import { posts } from '../data/posts';
+import PostCategory from '../pages/PostCategory';
 
 export const router = createBrowserRouter([
   {
@@ -27,7 +28,7 @@ export const router = createBrowserRouter([
             element: <BlogList posts={posts} />
           },
           {
-            path: ':id',
+            path: ':id/detail',
             element: <PostDetail />
           },
           {
@@ -35,9 +36,13 @@ export const router = createBrowserRouter([
             element: <NewPost />
           },
           {
+            path: ':category/category',
+            element: <PostCategory />
+          },
+          {
             path: ':id/edit',
             element: <EditPost />
-          }
+          },
         ]
       },
       {
