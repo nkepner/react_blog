@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { useSearch } from '../../hooks/useSearch';
-import { useFilters } from '../../hooks/useFilters';
-import BlogSearch from '../BlogSearch/BlogSearch';
-import BlogFilters from '../BlogFilters/BlogFilters';
-import BlogPost from '../BlogPost/BlogPost';
-import Pagination from '../Pagination/Pagination';
+import { useSearch } from '../hooks/useSearch';
+import { useFilters } from '../hooks/useFilters';
+import BlogSearch from '../components/BlogSearch/BlogSearch';
+import BlogFilters from '../components/BlogFilters/BlogFilters';
+import BlogPost from '../components/BlogPost/BlogPost';
+import Pagination from '../components/Pagination/Pagination';
 import './BlogList.css';
 import PropTypes from 'prop-types';
 
@@ -76,26 +76,7 @@ function BlogList({ posts }) {
   );
 }
 
-// export default BlogList;
 
-
-// function BlogList({ posts }) {
-//   return (
-//     <div className="blog-list">
-//       {posts.map(post => (
-//         <BlogPost
-//           key={post.id}
-//           id={post.id}
-//           title={post.title}
-//           content={post.content}
-//           author={post.author}
-//           date={post.date}
-//           readTime={post.readTime}
-//         />
-//       ))}
-//     </div>
-//   );
-// }
 
 BlogList.propTypes = {
   posts: PropTypes.arrayOf(

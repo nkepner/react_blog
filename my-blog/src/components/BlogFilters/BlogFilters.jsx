@@ -65,6 +65,9 @@ const BlogFilters = memo(function BlogFilters({
   );
 });
 
+
+
+
 BlogFilters.propTypes = {
   filters: PropTypes.shape({
     category: PropTypes.string.isRequired,
