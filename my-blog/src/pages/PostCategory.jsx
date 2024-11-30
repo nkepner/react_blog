@@ -1,15 +1,19 @@
 import { useParams } from 'react-router-dom';
 // import { posts } from '../data/posts';
 import BlogPost from '../components/BlogPost/BlogPost';
-import { usePosts } from '../hooks/usePosts';
+// import { usePosts } from '../hooks/usePosts';
+import { useBlog } from '../contexts/BlogContext';
 
 
 const PostCategory =() => {
+    const { state: { posts } } = useBlog();
+    console.log(`PostCategory posts: ${posts}`);
+
     const params = useParams();
 
     const { category } = params;
 
-    const currentPosts = usePosts().posts.filter(post => post.category == category);
+    const currentPosts = posts.filter(post => post.category == category);
 
     return (
         <div className="blog-list-container">

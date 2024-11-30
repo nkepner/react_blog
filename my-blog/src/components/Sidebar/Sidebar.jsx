@@ -1,9 +1,22 @@
 import { useNavigate } from 'react-router-dom';
 import './Sidebar.css';
 // import { posts } from '../../data/posts';
-import { usePosts } from '../../hooks/usePosts';
+// import { usePosts } from '../../hooks/usePosts';
+import { useBlog } from '../../contexts/BlogContext';
 
 function Sidebar() {
+  const blogStruct = useBlog();
+  console.log(`Sidebar blogStruct: ${blogStruct}`);
+  const { state: { posts } } = useBlog();
+  console.log(`Sidebar posts: ${posts}`);
+  for (const post of posts) {
+    console.log(`Sidebar post: ${post}`);
+    for (const key in post) {
+      console.log(`Sidebar key: ${key}`);
+      console.log(`Sidebar value: ${post[key]}`);
+    }
+  }
+
   const navigate = useNavigate();
   
   const categories = [
@@ -13,7 +26,8 @@ function Sidebar() {
     'General',
   ];
 
-  const recentPosts = usePosts().posts.slice().reverse();
+
+  const recentPosts = posts.slice().reverse();
 
   return (
     <aside className="sidebar">

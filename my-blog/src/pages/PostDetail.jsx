@@ -1,12 +1,14 @@
 import { useParams } from 'react-router-dom';
 // import { posts } from '../data/posts';
 import BlogPost from '../components/BlogPost/BlogPost';
-import { usePosts } from '../hooks/usePosts';
+// import { usePosts } from '../hooks/usePosts';
+import { useBlog } from '../contexts/BlogContext';
 
 
 const PostDetail =() => {
     const { id } = useParams();
-    const posts = usePosts().posts;
+    const { state: { posts } } = useBlog();
+    console.log(`PostDetail posts: ${posts}`);
 
     const post = posts.find(post => post.id === parseInt(id));
     if (!post) {

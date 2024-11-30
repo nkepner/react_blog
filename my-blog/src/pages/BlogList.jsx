@@ -6,12 +6,13 @@ import BlogFilters from '../components/BlogFilters/BlogFilters';
 import BlogPost from '../components/BlogPost/BlogPost';
 import Pagination from '../components/Pagination/Pagination';
 import './BlogList.css';
-import { usePosts } from '../hooks/usePosts';
+import { useBlog } from '../contexts/BlogContext';
 
 const POSTS_PER_PAGE = 5;
 
 function BlogList() {
-  const { posts } = usePosts();
+  const { state: { posts } } = useBlog();
+  console.log(`BlogList posts: ${posts}`);
 
   const [currentPage, setCurrentPage] = useState(1);
   

@@ -5,7 +5,7 @@ import { posts as cannedPosts } from '../data/posts'; // Import canned posts
 const BlogContext = createContext();
 
 const initialState = {
-  posts: [],
+  posts: cannedPosts,
   categories: [],
   tags: [],
   isLoading: false,
@@ -55,17 +55,16 @@ export function BlogProvider({ children }) {
       try {
         dispatch({ type: 'SET_LOADING', payload: true });
         
-        // Load from localStorage for now
-        const savedPosts = localStorage.getItem('blog_posts');
-        if (savedPosts) {
-          dispatch({ type: 'SET_POSTS', payload: JSON.parse(savedPosts) });
-        } else {
-          // use canned posts...
-          dispatch({ type: 'SET_POSTS', payload: cannedPosts });
-        }
+        // Load from localStorage for now (NOT WORKING)
+        // use canned posts...
+        dispatch({ type: 'SET_POSTS', payload: cannedPosts });
+        
 
         // Extract unique categories and tags
-        const posts = JSON.parse(savedPosts || '[]');
+        const posts = cannedPosts;
+        console.log(`BlogContext loadData posts: ${posts}`);
+        posts.forEach(post => console.log(`BlogContext loadData post: ${post}`));
+
         const categories = [...new Set(posts.map(post => post.category))];
         const tags = [...new Set(posts.flatMap(post => post.tags))];
 
