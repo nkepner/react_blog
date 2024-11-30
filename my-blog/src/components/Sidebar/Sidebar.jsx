@@ -14,9 +14,6 @@ function Sidebar() {
   ];
 
   const recentPosts = usePosts().posts.slice().reverse();
-  console.log(`recentPosts: ${recentPosts}`);
-  recentPosts.forEach(post => console.log(post));
-  recentPosts.forEach(post => console.log(post.title));
 
   return (
     <aside className="sidebar">

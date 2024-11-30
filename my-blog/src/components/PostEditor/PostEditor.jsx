@@ -78,7 +78,6 @@ function PostEditor() {
 
     if (Object.keys(newErrors).length === 0) {
       // Form is valid, handle submission
-      console.log('Form submitted:', formData);
     }
   };
 const richTextChange = (value) =>  {
