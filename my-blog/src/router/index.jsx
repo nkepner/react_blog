@@ -7,6 +7,7 @@ import NewPost from '../pages/NewPost';
 import EditPost from '../pages/EditPost';
 import Profile from '../pages/Profile';
 import NotFound from '../pages/NotFound/NotFound';
+import Login from '../pages/Login';
 // import { posts } from '../data/posts';
 import PostCategory from '../pages/PostCategory';
 
@@ -48,7 +49,11 @@ export const router = createBrowserRouter([
       {
         path: 'profile',
         element: <Profile />
-      }
+      },
+      {
+        path: 'login',
+        element: <Login />
+      },
     ]
   }
 ]);
