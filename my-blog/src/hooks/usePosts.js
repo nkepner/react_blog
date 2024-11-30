@@ -20,24 +20,31 @@ export function usePosts() {
 
   // Save posts to localStorage
   useEffect(() => {
+    console.log('Save posts to localStorage in usePosts useEffect posts:', posts);
     localStorage.setItem('blog_posts', JSON.stringify(posts));
   }, [posts]);
 
   const addPost = useCallback((newPost) => {
-    setPosts(prevPosts => [
-      { 
-        ...newPost, 
-        id: Date.now(),
-        createdAt: new Date().toISOString(),
-        likes: 0,
-        comments: []
-      },
-      ...prevPosts
-    ]);
+    console.log('in usePosts newPost:', newPost);
+    setPosts(prevPosts => {
+      prevPosts.forEach(post => {
+        console.log('in usePosts post:', post);
+      });
+      return [
+        ...prevPosts,
+        {
+          ...newPost,
+          id: Date.now(),
+          createdAt: new Date().toISOString(),
+          likes: 0,
+          comments: []
+        },
+      ]
+    });
   }, []);
 
   const updatePost = useCallback((id, updates) => {
-    setPosts(prevPosts => 
+    setPosts(prevPosts =>
       prevPosts.map(post =>
         post.id === id ? { ...post, ...updates } : post
       )
@@ -61,12 +68,12 @@ export function usePosts() {
       prevPosts.map(post =>
         post.id === postId
           ? {
-              ...post,
-              comments: [
-                ...post.comments,
-                { id: Date.now(), ...comment, createdAt: new Date().toISOString() }
-              ]
-            }
+            ...post,
+            comments: [
+              ...post.comments,
+              { id: Date.now(), ...comment, createdAt: new Date().toISOString() }
+            ]
+          }
           : post
       )
     );
