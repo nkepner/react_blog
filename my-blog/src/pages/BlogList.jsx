@@ -6,11 +6,13 @@ import BlogFilters from '../components/BlogFilters/BlogFilters';
 import BlogPost from '../components/BlogPost/BlogPost';
 import Pagination from '../components/Pagination/Pagination';
 import './BlogList.css';
-import PropTypes from 'prop-types';
+import { usePosts } from '../hooks/usePosts';
 
 const POSTS_PER_PAGE = 5;
 
-function BlogList({ posts }) {
+function BlogList() {
+  const { posts } = usePosts();
+
   const [currentPage, setCurrentPage] = useState(1);
   
   const {
@@ -29,7 +31,7 @@ function BlogList({ posts }) {
     isSearching
   } = useSearch(filteredItems);
 
-  const displayedPosts = searchResults;
+  const displayedPosts = searchResults ? searchResults : [];
   const totalPages = Math.ceil(displayedPosts.length / POSTS_PER_PAGE);
   
   const currentPosts = displayedPosts.slice(
@@ -74,21 +76,6 @@ function BlogList({ posts }) {
       )}
     </div>
   );
-}
-
-
-
-BlogList.propTypes = {
-  posts: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      title: PropTypes.string.isRequired,
-      content: PropTypes.string.isRequired,
-      author: PropTypes.string.isRequired,
-      date: PropTypes.string.isRequired,
-      readTime: PropTypes.number.isRequired
-    })
-  ).isRequired
 };
 
 export default BlogList;

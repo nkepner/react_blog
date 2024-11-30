@@ -1,16 +1,30 @@
 import { useState, useCallback, useEffect } from 'react';
+import { posts as cannedPosts } from '../data/posts';
 
 export function usePosts() {
+  console.log('usePosts() is being called somewhere...');
   const [posts, setPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
   // Load posts from localStorage
   useEffect(() => {
+    console.log('useEffect(<called first time in usePosts>)');
     const storedPosts = localStorage.getItem('blog_posts');
-    if (storedPosts) {
+    console.log(`storedPosts: ${storedPosts}`);
+    if (storedPosts && storedPosts.length > 0) {
+      const parsedPosts = JSON.parse(storedPosts);
+      console.log(`parsedPosts: ${parsedPosts}`);
       setPosts(JSON.parse(storedPosts));
     }
+    if (!posts || posts.length === 0) {
+      // use canned posts...
+      console.log('usePosts() - using canned posts');
+      setPosts(cannedPosts);
+      console.log(`posts: ${posts}`);
+    }
+    console.log(`posts: ${posts}`);
+    console.log('typeof(posts): ' + typeof(posts));
   }, []);
 
   // Save posts to localStorage
@@ -66,6 +80,10 @@ export function usePosts() {
       )
     );
   }, []);
+
+  if (!posts) {
+    setPosts(cannedPosts);
+  }
 
   return {
     posts,
