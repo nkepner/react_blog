@@ -1,5 +1,6 @@
 import { createContext, useContext, useReducer, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { posts as cannedPosts } from '../data/posts'; // Import canned posts
 
 const BlogContext = createContext();
 
@@ -58,6 +59,9 @@ export function BlogProvider({ children }) {
         const savedPosts = localStorage.getItem('blog_posts');
         if (savedPosts) {
           dispatch({ type: 'SET_POSTS', payload: JSON.parse(savedPosts) });
+        } else {
+          // use canned posts...
+          dispatch({ type: 'SET_POSTS', payload: cannedPosts });
         }
 
         // Extract unique categories and tags
