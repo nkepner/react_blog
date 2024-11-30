@@ -119,3 +119,5 @@ Added Blog Posts with titles content date and readTime displayed
 ## Screenshots
 ![ScreenShot Part 1](https://github.com/nkepner/react_blog/blob/steps0-2/myblogpart1scrnsht.png)
 
+# README Updates Part 6 and 7 Confusion
+I got confused because we already had the usePost hook during part 6. I thought updating the BlogList with the New Post at the end of was part of part 6 of the assignment and spent a signifigant amount of time on it before I realized we would need the BlogContext sections from part 7 to implement this.  Because of this my part 6 and part 7 pulls are a bit combined and likely elements were completed in a different order than was intended.
