@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import './Sidebar.css';
-import { posts } from '../../data/posts';
+// import { posts } from '../../data/posts';
+import { usePosts } from '../../hooks/usePosts';
 
 function Sidebar() {
   const navigate = useNavigate();
@@ -12,7 +13,8 @@ function Sidebar() {
     'General',
   ];
 
-  const recentPosts = posts.slice().reverse();
+  const recentPosts = usePosts().posts.slice().reverse();
+  console.log(`recentPosts: ${recentPosts}`);
 
   return (
     <aside className="sidebar">

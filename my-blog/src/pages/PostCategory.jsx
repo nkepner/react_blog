@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
-import { posts } from '../data/posts';
+// import { posts } from '../data/posts';
 import BlogPost from '../components/BlogPost/BlogPost';
+import { usePosts } from '../hooks/usePosts';
 
 
 const PostCategory =() => {
@@ -8,7 +9,7 @@ const PostCategory =() => {
 
     const { category } = params;
 
-    const currentPosts = posts.filter(post => post.category == category);
+    const currentPosts = usePosts().posts.filter(post => post.category == category);
 
     return (
         <div className="blog-list-container">
