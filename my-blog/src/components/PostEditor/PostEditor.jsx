@@ -14,7 +14,6 @@ function PostEditor() {
     category: 'General',
     isPublished: false,
     id: Date.now(),
-    key: Date.now(),
     author: 'John Doe',
     date: new Date().toISOString(),
     readTime: 3,
