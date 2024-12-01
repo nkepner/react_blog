@@ -1,17 +1,14 @@
 import { useAuth } from '../../hooks/useAuth';
 import { useState } from 'react';
+import { useUserContext } from '../../contexts/UserContext';
 
 function Login() {
-    const authenticate = useAuth()
+    const { updateUser } = useUserContext();
+    // const authenticate = useAuth()
     
     const [formData, setFormData] = useState({
       user: '',
     });
-
-    // id: 1,
-    // username: credentials.username,
-    // email: `${credentials.username}@example.com`,
-    // role: 'user'
   
     const [errors, setErrors] = useState({});
     const [isDirty, setIsDirty] = useState({});
@@ -22,10 +19,10 @@ function Login() {
           return value.trim().length < 5 
             ? 'user must be at least 5 characters' 
             : '';
-        case 'username':
-          return value.trim().length < 10
-            ? 'username must be at least 100 characters' 
-            : '';
+        // case 'username':
+        //   return value.trim().length < 10
+        //     ? 'username must be at least 100 characters' 
+        //     : '';
         default:
           return '';
       }
@@ -76,6 +73,8 @@ function Login() {
   
       if (Object.keys(newErrors).length === 0) {
         console.log(formData)// Form is valid, handle submission
+        updateUser(formData.user);
+        console.log(formData.user);
       }
     };
 
