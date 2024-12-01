@@ -5,7 +5,7 @@ import { posts as cannedPosts } from '../data/posts'; // Import canned posts
 const BlogContext = createContext();
 
 const initialState = {
-  posts: cannedPosts,
+  posts: [],
   categories: [],
   tags: [],
   isLoading: false,
@@ -53,18 +53,25 @@ export function BlogProvider({ children }) {
   useEffect(() => {
     const loadData = async () => {
       try {
+        let posts = [];
         dispatch({ type: 'SET_LOADING', payload: true });
         
-        // Load from localStorage for now (NOT WORKING)
-        // use canned posts...
-        dispatch({ type: 'SET_POSTS', payload: cannedPosts });
-        
+        // Load from localStorage for now
+        const savedPosts = localStorage.getItem('blog_posts');
+        if (savedPosts) {
+          posts = JSON.parse(savedPosts);
+          if (Array.isArray(posts) && posts.length > 0) {
+            dispatch({ type: 'SET_POSTS', payload: posts });
+          } else {
+            dispatch({ type: 'SET_POSTS', payload: cannedPosts });
+            posts = cannedPosts;
+          }
+        } else {
+          dispatch({ type: 'SET_POSTS', payload: cannedPosts });
+          posts = cannedPosts;
+        }
 
         // Extract unique categories and tags
-        const posts = cannedPosts;
-        console.log(`BlogContext loadData posts: ${posts}`);
-        posts.forEach(post => console.log(`BlogContext loadData post: ${post}`));
-
         const categories = [...new Set(posts.map(post => post.category))];
         const tags = [...new Set(posts.flatMap(post => post.tags))];
 
@@ -81,6 +88,7 @@ export function BlogProvider({ children }) {
   // Save posts to localStorage when they change
   useEffect(() => {
     localStorage.setItem('blog_posts', JSON.stringify(state.posts));
+    console.log('Posts saved to localStorage');
   }, [state.posts]);
 
   return (

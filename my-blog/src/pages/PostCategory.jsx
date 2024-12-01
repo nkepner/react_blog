@@ -7,7 +7,6 @@ import { useBlog } from '../contexts/BlogContext';
 
 const PostCategory =() => {
     const { state: { posts } } = useBlog();
-    console.log(`PostCategory posts: ${posts}`);
 
     const params = useParams();
 

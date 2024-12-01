@@ -11,8 +11,13 @@ function PostEditor() {
     title: '',
     content: '',
     tags: [],
-    category: 'general',
-    isPublished: false
+    category: 'General',
+    isPublished: false,
+    id: Date.now(),
+    key: Date.now(),
+    author: 'John Doe',
+    date: new Date().toISOString(),
+    readTime: '5 min',
   });
 
   const [errors, setErrors] = useState({});
@@ -130,10 +135,10 @@ const richTextChange = (value) =>  {
           value={formData.category}
           onChange={handleChange}
         >
-          <option value="general">General</option>
-          <option value="technology">Technology</option>
-          <option value="lifestyle">Lifestyle</option>
-          <option value="travel">Travel</option>
+          <option value="General">General</option>
+          <option value="Technology">Technology</option>
+          <option value="Lifestyle">Lifestyle</option>
+          <option value="Travel">Travel</option>
         </select>
       </div>
 

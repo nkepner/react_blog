@@ -8,7 +8,6 @@ import { useBlog } from '../contexts/BlogContext';
 const PostDetail =() => {
     const { id } = useParams();
     const { state: { posts } } = useBlog();
-    console.log(`PostDetail posts: ${posts}`);
 
     const post = posts.find(post => post.id === parseInt(id));
     if (!post) {

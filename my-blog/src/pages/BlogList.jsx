@@ -12,7 +12,6 @@ const POSTS_PER_PAGE = 5;
 
 function BlogList() {
   const { state: { posts } } = useBlog();
-  console.log(`BlogList posts: ${posts}`);
 
   const [currentPage, setCurrentPage] = useState(1);
   
