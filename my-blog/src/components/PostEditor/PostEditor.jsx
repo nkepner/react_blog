@@ -17,7 +17,7 @@ function PostEditor() {
     key: Date.now(),
     author: 'John Doe',
     date: new Date().toISOString(),
-    readTime: '5 min',
+    readTime: 3,
   });
 
   const [errors, setErrors] = useState({});
