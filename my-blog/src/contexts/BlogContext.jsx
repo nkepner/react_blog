@@ -23,7 +23,7 @@ function blogReducer(state, action) {
     case 'ADD_POST':
       return { 
         ...state, 
-        posts: [action.payload, ...state.posts] 
+        posts: [ ...state.posts, action.payload] 
       };
     case 'UPDATE_POST':
       return {
