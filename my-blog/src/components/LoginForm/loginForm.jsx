@@ -1,10 +1,11 @@
+import { useAuth } from '../../hooks/useAuth';
 import { useState } from 'react';
 
 function Login() {
+    const authenticate = useAuth()
+    
     const [formData, setFormData] = useState({
       user: '',
-      username: '',
-      email: [],
     });
 
     // id: 1,
@@ -24,10 +25,6 @@ function Login() {
         case 'username':
           return value.trim().length < 10
             ? 'username must be at least 100 characters' 
-            : '';
-        case 'email':
-          return value.trim().length < 10
-            ? 'At least one tag is required' 
             : '';
         default:
           return '';
@@ -67,6 +64,7 @@ function Login() {
     const handleSubmit = (e) => {
       e.preventDefault();
       
+      
       // Validate all fields
       const newErrors = {};
       Object.keys(formData).forEach(key => {
@@ -77,18 +75,12 @@ function Login() {
       setErrors(newErrors);
   
       if (Object.keys(newErrors).length === 0) {
-        // Form is valid, handle submission
+        console.log(formData)// Form is valid, handle submission
       }
     };
-//   const richTextChange = (value) =>  {
-//       setFormData(prev => ({
-//           ...prev,
-//           username: value
-//       }));
-//   };
-  
+
     return (
-      <form onSubmit={handleSubmit} className="post-editor">
+      <form onSubmit={handleSubmit} className="login-form">
         <div className="form-group">
           <label htmlFor="user">user *</label>
           <input
@@ -103,10 +95,7 @@ function Login() {
           {errors.user && <span className="error-message">{errors.user}</span>}
         </div>
   
-        <div className="form-group">
-          <label htmlFor="username">username *</label>
-         {/* <RichTextEditor value={formData.username} onChange={richTextChange} error={errors.username} /> */}
-        </div>
+
   
         {/* <TagInput
           tags={formData.tags}
@@ -145,7 +134,7 @@ function Login() {
         </div> */}
   
         <button type="submit" className="submit-button">
-          {formData.isPublished ? 'Publish Post' : 'Save Draft'}
+          {formData.isPublished ? 'Publish Post' : 'Login'}
         </button>
       </form>
     );

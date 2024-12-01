@@ -1,0 +1,103 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    padding: 8px;
+    margin: 8px;
+    background-color: #000000;
+    color: white;
+    width: 100%
+}
+
+.navigation {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    overflow: hidden;
+}
+
+.button {
+    background-color: #04AA6D;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+
+
+
+.navigation__toggle-icon {
+    margin: 0;
+    padding: 0;
+    color: #0f1f46;
+    /* Dark background */
+}
+
+.navigation__menu {
+    float: left;
+    /* Horizontal items */
+}
+
+.nav-link {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    background-color: #ddd;
+    /* Gray on hover */
+    color: black;
+}
+
+/* Responsive Styles (for smaller screens) */
+@media screen and (max-width: 600px) {
+    .nav-item {
+        float: none;
+        display: block;
+        /* Stack items vertically */
+    }
+}
+
+/* import "./NavBar.css";
+
+const links = [
+  { name: "Home", href: "#home" },
+  { name: "News", href: "#news" },
+  { name: "Contact", href: "#contact" },
+  { name: "About", href: "#about" },
+];
+
+/* function NavBar() {
+  return (
+    <ul className="nav-menu">
+      {links.map((link) => (
+        <li key={link.name} className="nav-item">
+          <a className="nav-link" href={link.href}>
+            {link.name}
+          </a>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+export default NavBar; */
+*/
