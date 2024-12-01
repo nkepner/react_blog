@@ -8,6 +8,7 @@ import EditPost from '../pages/EditPost';
 import Profile from '../pages/Profile';
 import NotFound from '../pages/NotFound/NotFound';
 import Login from '../pages/Login';
+import Settings from '../components/Settings/Settings';
 // import { posts } from '../data/posts';
 import PostCategory from '../pages/PostCategory';
 
@@ -53,6 +54,9 @@ export const router = createBrowserRouter([
       {
         path: 'login',
         element: <Login />
+      },{
+        path: 'settings',
+        element: <Settings />
       },
     ]
   }

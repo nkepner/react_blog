@@ -11,7 +11,8 @@ function Navigation() {
     { path: '/posts', label: 'Blog' },
     { path: '/posts/new', label: 'New Post' },
     { path: '/profile', label: 'Profile' },
-    { path: '/login', label: 'Login'}
+    { path: '/login', label: 'Login'},
+    { path: '/settings', label: 'Settings'},
   ];
 
   const toggleMenu = () => {
