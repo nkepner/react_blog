@@ -1,4 +1,4 @@
-* {
+body, h1, h2, button, p, span, time, select, input, div, article {
     color: var(--text-color);
     background-color: var(--bg-color);
 }

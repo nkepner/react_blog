@@ -6,6 +6,12 @@ function Settings() {
   const { theme, toggleTheme } = useTheme();
   const { preferences, updatePreference, resetPreferences } = usePreferences();
 
+  const themeHelper = () => {
+    const newTheme = theme === 'light' ? 'dark-theme' : 'light-theme';
+    document.documentElement.className=newTheme;
+    toggleTheme();
+  }
+
   return (
     <div className="settings">
       <h2>Settings</h2>
@@ -17,7 +23,7 @@ function Settings() {
           <input
             type="checkbox"
             checked={theme === 'dark'}
-            onChange={toggleTheme}
+            onChange={themeHelper}
           />
         </label>
       </section>
