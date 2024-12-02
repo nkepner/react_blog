@@ -29,33 +29,7 @@
   }
 }
 
-/*
-@property --text-color {
-  syntax: '<color>';
-  inherits: true;
-  initial-value: black;
-}
 
-@property --bg-color {
-  syntax: '<color>';
-  inherits: true;
-  initial-value: white;
-}
-*/
-
-/*
-@property --text-color {
-  syntax: '<color>';
-  inherits: true;
-  initial-value: red;
-}
-
-@property --bg-color {
-  syntax: '<color>';
-  inherits: true;
-  initial-value: darkgreen;
-}
-*/
 
 @property --text-color {
   syntax: '<color>';
@@ -67,20 +41,5 @@
   syntax: '<color>';
   inherits: true;
   initial-value: white;
-}
-
-:root {
-  --background-color: white;
-  --text-color: black;
-}
-
-.dark-theme {
-  --background-color: black;
-  --text-color: white;
-}
-
-.light-theme {
-  --background-color: white;
-  --text-color: black;
 }
 
