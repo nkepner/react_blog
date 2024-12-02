@@ -4,10 +4,12 @@ import TagInput from '../TagInput/TagInput';
 import RichTextEditor from '../RichTextEditor/RichTectEditor';
 import { useBlog } from '../../contexts/BlogContext';
 import { useUserContext } from '../../contexts/UserContext';
+import { useNavigate } from 'react-router-dom';
 
 function PostEditor() {
   const { dispatch } = useBlog();
   const { user: { user: username }} = useUserContext();
+  const navigate = useNavigate();
   
   const [formData, setFormData] = useState({
     title: '',
@@ -89,6 +91,8 @@ function PostEditor() {
       // Form is valid, handle submission
       
       dispatch({ type: 'ADD_POST', payload: formData });
+      let path = `/posts/${formData.id}/detail`;
+      navigate(path);
     }
   };
 const richTextChange = (value) =>  {
@@ -163,3 +167,5 @@ const richTextChange = (value) =>  {
 }
 
 export default PostEditor;
+
+
