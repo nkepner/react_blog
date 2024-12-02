@@ -7,8 +7,14 @@ function Settings() {
   const { preferences, updatePreference, resetPreferences } = usePreferences();
 
   const themeHelper = () => {
-    const newTheme = theme === 'light' ? 'dark-theme' : 'light-theme';
-    document.documentElement.className=newTheme;
+    let text_color = 'black';
+    let bg_color = 'white';
+    if (theme === 'light') {
+      text_color = 'white';
+      bg_color = 'black';
+    }
+    document.documentElement.style.setProperty('--text-color', text_color);
+    document.documentElement.style.setProperty('--background-color', bg_color);
     toggleTheme();
   }
 

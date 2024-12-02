@@ -63,7 +63,7 @@
   initial-value: black;
 }
 
-@property --bg-color {
+@property --background-color {
   syntax: '<color>';
   inherits: true;
   initial-value: white;
