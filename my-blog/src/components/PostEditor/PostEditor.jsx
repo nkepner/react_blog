@@ -7,7 +7,8 @@ import { useUserContext } from '../../contexts/UserContext';
 
 function PostEditor() {
   const { dispatch } = useBlog();
-  const { user } = useUserContext();
+  const { user: { user: username }} = useUserContext();
+  
   const [formData, setFormData] = useState({
     title: '',
     content: '',
@@ -15,7 +16,7 @@ function PostEditor() {
     category: 'General',
     isPublished: false,
     id: Date.now(),
-    author: user ? user : "unknown",
+    author: username ? username : "unknown",
     date: new Date().toISOString(),
     readTime: 3,
   });
