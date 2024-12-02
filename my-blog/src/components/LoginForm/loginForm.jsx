@@ -1,10 +1,12 @@
 import { useAuth } from '../../hooks/useAuth';
 import { useState } from 'react';
 import { useUserContext } from '../../contexts/UserContext';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
     const { updateUser } = useUserContext();
     // const authenticate = useAuth()
+    const navigate = useNavigate();
     
     const [formData, setFormData] = useState({
       user: '',
@@ -72,9 +74,9 @@ function Login() {
       setErrors(newErrors);
   
       if (Object.keys(newErrors).length === 0) {
-        console.log(formData)// Form is valid, handle submission
         updateUser(formData.user);
         console.log(formData.user);
+        navigate('/profile');
       }
     };
 

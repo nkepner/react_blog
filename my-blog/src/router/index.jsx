@@ -4,7 +4,6 @@ import Home from '../pages/Home';
 import BlogList from '../pages/BlogList';
 import PostDetail from '../pages/PostDetail';
 import NewPost from '../pages/NewPost';
-import EditPost from '../pages/EditPost';
 import Profile from '../pages/Profile';
 import NotFound from '../pages/NotFound/NotFound';
 import Login from '../pages/Login';
@@ -40,10 +39,6 @@ export const router = createBrowserRouter([
           {
             path: ':category/category',
             element: <PostCategory />
-          },
-          {
-            path: ':id/edit',
-            element: <EditPost />
           },
         ]
       },

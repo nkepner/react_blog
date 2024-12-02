@@ -167,5 +167,3 @@ const richTextChange = (value) =>  {
 }
 
 export default PostEditor;
-
-
