@@ -5,7 +5,7 @@ ul {
     overflow: hidden;
 }
 
-li {
+li.navigation__item {
     float: left;
 }
 
