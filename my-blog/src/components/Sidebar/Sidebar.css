@@ -1,4 +1,6 @@
-body, h1, h2, button, p, span, time, select, input, div, article {
-    color: var(--text-color);
-    background-color: var(--background-color);
+body, h1, h2, button, p, span, time, select, input, div, article, html {
+    color: var(--color-text);
+    background-color: var(--color-background);
+    accent-color: var(--color-accent);
+    primary: var(--color-primary);
 }

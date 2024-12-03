@@ -29,17 +29,3 @@
   }
 }
 
-
-
-@property --text-color {
-  syntax: '<color>';
-  inherits: true;
-  initial-value: black;
-}
-
-@property --background-color {
-  syntax: '<color>';
-  inherits: true;
-  initial-value: white;
-}
-
