@@ -9,8 +9,8 @@ export const themes = {
       primary: '#2563eb',
       background: '#ffffff',
       text: '#1f2937',
-      border: '#e5e7eb',
-      accent: '#3b82f6',
+      border: '#5b7071',
+      accent: '#000000',
       error: '#ef4444',
       success: '#22c55e'
     },
@@ -46,10 +46,10 @@ export const themes = {
   dark: {
     colors: {
       primary: '#3b82f6',
-      background: '#1f2937',
+      background: '#000000',
       text: '#f3f4f6',
-      border: '#374151',
-      accent: '#60a5fa',
+      border: '#0b393c',
+      accent: '#000000',
       error: '#f87171',
       success: '#4ade80'
     },

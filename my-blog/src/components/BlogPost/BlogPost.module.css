@@ -2,18 +2,20 @@
   max-width: 800px;
   margin: 2rem auto;
   padding: 1.5rem;
-  background: white;
+  background: var(--colorback-ground);
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(7, 121, 129, 0.589);
 }
 
 .header {
+
   margin-bottom: 1.5rem;
 }
 
 .title {
+  background: var(--color-border);
   font-size: 2rem;
-  color: #2c3e50;
+  color: var(--color-text);
   margin-bottom: 0.5rem;
 }
 
@@ -32,11 +34,13 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .blogPost {
+    background: #c65454;
     margin: 1rem;
     padding: 1rem;
   }
 
   .meta {
+    background:#4a6580;
     flex-direction: column;
     gap: 0.5rem;
   }
