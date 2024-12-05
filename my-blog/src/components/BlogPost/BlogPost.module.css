@@ -15,7 +15,7 @@
 .title {
   background: var(--color-border);
   font-size: 2rem;
-  color: var(--color-text);
+  color: white;
   margin-bottom: 0.5rem;
 }
 
