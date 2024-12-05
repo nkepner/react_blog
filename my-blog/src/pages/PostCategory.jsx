@@ -1,9 +1,14 @@
 import { useParams } from 'react-router-dom';
-import { posts } from '../data/posts';
+// import { posts } from '../data/posts';
 import BlogPost from '../components/BlogPost/BlogPost';
+// import { usePosts } from '../hooks/usePosts';
+import { useBlog } from '../contexts/BlogContext';
 
 
 const PostCategory =() => {
+    const { state: { posts } } = useBlog();
+    console.log(`PostCategory posts: ${posts}`);
+
     const params = useParams();
 
     const { category } = params;

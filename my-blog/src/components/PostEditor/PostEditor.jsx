@@ -2,8 +2,11 @@ import { useState } from 'react';
 import './PostEditor.css';
 import TagInput from '../TagInput/TagInput';
 import RichTextEditor from '../RichTextEditor/RichTectEditor';
+import { useBlog } from '../../contexts/BlogContext';
 
 function PostEditor() {
+  const { dispatch } = useBlog();
+
   const [formData, setFormData] = useState({
     title: '',
     content: '',
@@ -78,7 +81,8 @@ function PostEditor() {
 
     if (Object.keys(newErrors).length === 0) {
       // Form is valid, handle submission
-      console.log('Form submitted:', formData);
+      
+      dispatch({ type: 'ADD_POST', payload: formData });
     }
   };
 const richTextChange = (value) =>  {
