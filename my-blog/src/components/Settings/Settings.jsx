@@ -6,24 +6,6 @@ function Settings() {
   const { theme, toggleTheme } = useTheme();
   const { preferences, updatePreference, resetPreferences } = usePreferences();
 
-  const themeHelper = () => {
-    let text_color = '#1f2937';
-    let bg_color = '#ffffff';
-    let color_accent = '#3b82f6';
-    let color_primary = '#2563eb';
-    if (theme === 'light') {
-      text_color = '#f3f4f6';
-      bg_color = '#1f2937';
-      color_accent = '#60a5fa';
-      color_primary = '#3b82f6';
-    }
-    document.documentElement.style.setProperty('--color-text', text_color);
-    document.documentElement.style.setProperty('--color-backgroud', bg_color);
-    document.documentElement.style.setProperty('--color-accent', color_accent);
-    document.documentElement.style.setProperty('--color-primary', color_primary);
-    toggleTheme();
-  }
-
   return (
     <div className="settings">
       <h2>Settings</h2>
@@ -35,7 +17,7 @@ function Settings() {
           <input
             type="checkbox"
             checked={theme === 'dark'}
-            onChange={themeHelper}
+            onChange={toggleTheme}
           />
         </label>
       </section>
